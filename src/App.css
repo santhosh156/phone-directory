@@ -1,21 +1,46 @@
-.addButton {
+.component-body-container {
+    margin: 50px;
+}
+
+.custom-btn {
+    padding: 10px;
+    border: none;
+    margin-right: 10px;
+    text-transform: uppercase;
+    width: 100px;
+    font-size: 20px;
+    cursor: pointer;
+    outline: none;
+}
+
+.add-btn {
     color: white;
     background: #7ab97a;
-    border: none;
-    font-size: 20px;
-    padding: 10px 20px 10px 20px;
-    margin-top: 50px;
-    margin-left: 50px;
 }
 
-.details {
-    margin-top: 50px;
-    margin-left: 50px;
+.del-btn {
+    color: white;
+    background: #fa9c9c;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 40% 30% auto;
+    margin-bottom: 30px;
+}
+
+.heading-container {
+    margin: 30px 0 30px 0;
+}
+
+.grid-item {
+    font-size: 18px;
+    word-wrap: break-word;
+    margin-bottom: -20px;
+}
+
+.name-heading, .phone-heading {
     font-size: 20px;
-    font-weight: bold;
     color: grey;
-}
-
-.phone {
-    margin-left: 450px;
+    font-weight: bold;
 }
