@@ -1,0 +1,21 @@
+.addButton {
+    color: white;
+    background: #7ab97a;
+    border: none;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.details {
+    margin-top: 50px;
+    margin-left: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    color: grey;
+}
+
+.phone {
+    margin-left: 450px;
+}
