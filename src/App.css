@@ -26,7 +26,7 @@
 .grid-container {
     display: grid;
     grid-template-columns: 40% 30% auto;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .heading-container {
@@ -36,7 +36,6 @@
 .grid-item {
     font-size: 18px;
     word-wrap: break-word;
-    margin-bottom: -20px;
 }
 
 .name-heading, .phone-heading {
