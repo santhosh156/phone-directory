@@ -1,34 +1,8 @@
 import React, { Component } from 'react';
 import Header from './Header';
-import './App.css'
+import './ShowSubscribers.css'
 
-// let subscribers = [
-    //   {
-    //     id: 1,
-    //     name: "Santhosh",
-    //     phone: "9597246630"
-    //   },
-    //   {
-    //     id: 2,
-    //     name: "Sowndarya",
-    //     phone: "9944709688"
-    //   },
-    //   {
-    //     id: 3,
-    //     name: "Hasini",
-    //     phone: "NA"
-    //   }
-    // ];
-
-class App extends Component {
-
-  constructor() {
-    super();
-    this.state = {
-      subscribersList: []
-    }
-  }
-
+class ShowSubscribers extends Component {
   render() {
     return (
       <div>
@@ -42,7 +16,7 @@ class App extends Component {
           </div>
 
           {
-            this.state.subscribersList.map(sub => {
+            this.props.subscribersList.map(sub => {
               return <div id={sub.id} className="grid-container">
                   <span className="grid-item">{sub.name}</span>
                   <span className="grid-item">{sub.phone}</span>
@@ -50,12 +24,10 @@ class App extends Component {
                 </div>
             })
           }
-
         </div>
-
       </div>
     );
   }
 }
 
-export default App;
+export default ShowSubscribers;
