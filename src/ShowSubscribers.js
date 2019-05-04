@@ -4,11 +4,16 @@ import './ShowSubscribers.css';
 import {Link} from 'react-router-dom';
 
 class ShowSubscribers extends Component {
+
+  onDeleteClick = (subscriberId) => {
+    this.props.deleteSubscriberHandler(subscriberId);
+  }
+
   render() {
     return (
       <div>
         <Header heading="Phone Directory"/>
-        <div class="component-body-container">
+        <div className="component-body-container">
           <Link to='/add'>
             <button className="custom-btn add-btn">ADD</button>
           </Link>
@@ -23,7 +28,7 @@ class ShowSubscribers extends Component {
               return <div id={sub.id} className="grid-container">
                   <span className="grid-item">{sub.name}</span>
                   <span className="grid-item">{sub.phone}</span>
-                  <button className="custom-btn del-btn">DELETE</button>
+                  <button className="custom-btn del-btn" onClick={this.onDeleteClick.bind(this, sub.id)}>DELETE</button>
                 </div>
             })
           }

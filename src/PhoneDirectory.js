@@ -8,18 +8,7 @@ class PhoneDirectory extends Component {
     constructor() {
         super();
         this.state = {
-            subscribersList: [
-                {
-                    id: 1,
-                    name: 'Santhosh',
-                    phone: '9597246630'
-                },
-                {
-                    id: 2,
-                    name: 'Sowmi',
-                    phone: '9944709688'
-                }
-            ]
+            subscribersList: []
         }
     }
 
@@ -37,13 +26,28 @@ class PhoneDirectory extends Component {
         console.log(this.state.subscribersList);
     }
 
+    deleteSubscriberHandler = (subscriberId) => {
+        let subscribersList = this.state.subscribersList;
+        let subscriberIndex = 0;
+
+        subscribersList.forEach(function(subscriber, index) {
+            if (subscriber.id === subscriberId) {
+                subscriberIndex = index;
+            }
+        }, this);
+
+        let newSubscibers = subscribersList;
+        newSubscibers.splice(subscriberIndex, 1);
+        this.setState({subscribers: newSubscibers});
+    }
+
     render() {
         return(
             //<AddSubscriber addSubscriberHandler={this.addSubscriberHandler} />
             //<ShowSubscribers subscribersList={this.state.subscribersList}/>
             <Router>
                 <div>
-                    <Route exact path='/' render = {(prop) => <ShowSubscribers {...prop} subscribersList={this.state.subscribersList}/>}/>
+                    <Route exact path='/' render = {(prop) => <ShowSubscribers {...prop} subscribersList={this.state.subscribersList} deleteSubscriberHandler={this.deleteSubscriberHandler}/>}/>
                     <Route exact path='/add' render = {({history}, prop) => <AddSubscriber history={history} {...prop} addSubscriberHandler={this.addSubscriberHandler} />}/>
                 </div>
             </Router>
